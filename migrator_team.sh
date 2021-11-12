@@ -1,14 +1,18 @@
 #!/bin/bash
 
-echo -e "Setting up the environment..."
-echo -e "  Installing jq... \n"
-sudo apt install jq
+### SET THIS VARIABLES!
 
 TEAM_NAME=YOUR_TEAM_NAME
 SOURCE_ORGANIZATION=YOUR_SOURCE_ORG
 DESTINATION_ORGANIZATION=YOUR_DESTINATION_ORG
-
 PAT=YOUR_PAT
+
+### END VARIABLE SECTION
+
+echo -e "Setting up the environment..."
+echo -e "  Installing jq... \n"
+sudo apt install jq
+
 HEADERS=(-H "Accept: application/vnd.github.v3+json" -H "Authorization: token $PAT")
 
 # Get the Repos of the team
